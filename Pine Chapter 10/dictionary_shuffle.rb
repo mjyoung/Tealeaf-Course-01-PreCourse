@@ -1,13 +1,27 @@
-def shuffle some_array 
-	random_array = []
-	while some_array.empty? == false
-			random_word = rand(0..some_array.count-1)
-			random_array.push(some_array[random_word])
-			some_array.delete(some_array[random_word])
-	end
+# Shuffle using RECURSION
+def recursive_shuffle some_array, random_array
+	random_word = rand(0..some_array.count-1)
+	random_array.push(some_array[random_word])
+	some_array.delete(some_array[random_word])
 
-	puts random_array.join(', ')
+	if some_array.empty?
+		puts random_array.join(', ')
+	else
+		recursive_shuffle some_array, random_array
+	end
 end
+
+
+# Shuffle using WHILE LOOP
+# def shuffle some_array 
+# 	while some_array.empty? == false
+# 			random_word = rand(0..some_array.count-1)
+# 			random_array.push(some_array[random_word])
+# 			some_array.delete(some_array[random_word])
+# 	end
+
+# 	puts random_array.join(', ')
+# end
 
 word_array = []
 
@@ -22,4 +36,4 @@ while true
 	end
 end
 
-shuffle word_array
+recursive_shuffle word_array, []
