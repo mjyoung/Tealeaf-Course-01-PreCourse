@@ -73,6 +73,6 @@ def roman_numeral num_to_convert
 	return num_converted
 end
 
-puts "Please enter a number to convert to Old Roman Numerals:"
+puts "Please enter a number to convert to Modern Roman Numerals:"
 num_to_convert = gets.chomp.to_i
 roman_numeral num_to_convert
